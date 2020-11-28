@@ -18,7 +18,14 @@ const access_token = () => {
     console.log("INDEX: " + index + "\n");
 
     var parameters = current_url.substring(index + 1);
-    console.log("url parameters: " + parameters);
+    console.log("url parameters: " + parameters + "\n");
+
+    var token = getParameter(parameters, "id_token=");
+    var access = getParameter(parameters, "access_token=");
+
+    console.log("token: " + token + "\n");
+    console.log("access: " + access + "\n");
+    return parameters;
 }
 
 const display_results = (data) => {
