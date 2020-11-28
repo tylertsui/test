@@ -138,7 +138,8 @@ let main = () => {
     let button = document.getElementById("submit");
     let return_button = document.getElementById("return");
 
-    if (checkUserForNull(user)) {
+    const token = getToken();
+    if (!checkURLForToken(token)) {
         redirectToHome();
     }
 
