@@ -350,9 +350,9 @@ const signOut = () => {
 const token = getToken();
 
 const main = () => {
-    // if (!checkURLForToken(token)) {
-    //     redirectToHome();
-    // }
+    if (!checkURLForToken(token)) {
+        redirectToHome();
+    }
     pageNavigation();
 }
 
