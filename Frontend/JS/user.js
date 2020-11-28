@@ -9,6 +9,16 @@ const toUser = () => {
 const navigate_ebook = () => {
     window.location.replace("./display.html");
 }
+const access_token = () => {
+    var current_url = window.location.href;
+    current_url = current_url.toString;
+    console.log("CURRENT URL: " + current_url);
+    var index = current_url.indexOf("#");
+    console.log("INDEX: " + index);
+
+    var parameters = current_url.substring(index + 1);
+    console.log("url parameters: " + parameters);
+}
 
 const display_results = (data) => {
     for (let i = 0; i < data.length; i++) {
@@ -111,8 +121,7 @@ const search_by_year = (year) => {
 }
 
 const search_by_user = () => {
-    let params = new URLSearchParams(location.search);
-    console.log(params);
+    access_token();
     let token = sessionStorage.getItem("token");
     axios({
         method: 'GET',
@@ -197,7 +206,7 @@ const signOut = () => {
 const token = getToken();
 
 const main = () => {
-    console.log(token);
+    console.log("TOKEN::::" + token);
     if (!checkURLForToken(token)) {
         redirectToHome();
     }
