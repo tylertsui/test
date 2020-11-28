@@ -14,11 +14,11 @@ const parseParameter = (url, param) => {
     let urlSplit = url.split("&");
     let returnValue;
     for (let i = 0; i < urlSplit.length; i++) {
-        let urlParam = urlVars[i];
+        let urlParam = urlSplit[i];
         let index = urlParam.toString().indexOf("=");
         urlParam = urlParam.substring(0, index + 1);
         if (param === urlParam) {
-            returnValue = urlVars[i].replace(param, "");
+            returnValue = urlSplit[i].replace(param, "");
             i = urlSplit.length; // exits for loop
         }
     }
