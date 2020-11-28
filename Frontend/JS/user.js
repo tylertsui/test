@@ -27,21 +27,15 @@ const parseParameter = (url, param) => {
 
 const access_token = () => {
     let current_url = window.location.href;
-    console.log("current url: " + current_url + "\n");
     current_url = current_url.toString();
-    console.log("CURRENT URL: " + current_url + "\n");
     let index = current_url.indexOf("#");
-    console.log("INDEX: " + index + "\n");
 
     let parameters = current_url.substring(index + 1);
-    console.log("url parameters: " + parameters + "\n");
 
     let token = parseParameter(parameters, "id_token=");
     let access = parseParameter(parameters, "access_token=");
 
-    console.log("token: " + token + "\n");
-    console.log("access: " + access + "\n");
-    return parameters;
+    return token;
 }
 
 const display_results = (data) => {
@@ -145,8 +139,7 @@ const search_by_year = (year) => {
 }
 
 const search_by_user = () => {
-    access_token();
-    let token = sessionStorage.getItem("token");
+    let token = access_token();
     axios({
         method: 'GET',
         url: `${BASE_URL}/prod/ebooks`,
