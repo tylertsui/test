@@ -111,10 +111,12 @@ const search_by_year = (year) => {
 }
 
 const search_by_user = () => {
+    let params = new URLSearchParams(location.search);
+    console.log(params);
     let token = sessionStorage.getItem("token");
     axios({
         method: 'GET',
-        url: `${BASE_URL}/api/ebooks/youruploads`,
+        url: `${BASE_URL}/prod/ebooks`,
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
