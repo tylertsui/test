@@ -10,7 +10,7 @@ const navigate_ebook = () => {
     window.location.replace("./display.html");
 }
 
-const parseParameters = (url, param) => {
+const parseParameter = (url, param) => {
     let urlSplit = url.split("&");
     let returnValue;
     for (let i = 0; i < urlSplit.length; i++) {
