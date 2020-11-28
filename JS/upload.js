@@ -102,7 +102,7 @@ let upload_function = async () => {
 }
 
 let navigate_user_page = () => {
-    window.location.replace("../../UserPage/HTML/index.html");
+    window.location.replace("./index.html");
 }
 
 const uploadEBookToDB = (body) => {
