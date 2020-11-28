@@ -9,19 +9,35 @@ const toUser = () => {
 const navigate_ebook = () => {
     window.location.replace("./display.html");
 }
+
+const parseParameters = (url, param) => {
+    let urlSplit = url.split("&");
+    let returnValue;
+    for (let i = 0; i < urlSplit.length; i++) {
+        let urlParam = urlVars[i];
+        let index = urlParam.toString().indexOf("=");
+        urlParam = urlParam.substring(0, index + 1);
+        if (param === urlParam) {
+            returnValue = urlVars[i].replace(param, "");
+            i = urlSplit.length; // exits for loop
+        }
+    }
+    return returnValue;
+}
+
 const access_token = () => {
-    var current_url = window.location.href;
+    let current_url = window.location.href;
     console.log("current url: " + current_url + "\n");
     current_url = current_url.toString();
     console.log("CURRENT URL: " + current_url + "\n");
-    var index = current_url.indexOf("#");
+    let index = current_url.indexOf("#");
     console.log("INDEX: " + index + "\n");
 
-    var parameters = current_url.substring(index + 1);
+    let parameters = current_url.substring(index + 1);
     console.log("url parameters: " + parameters + "\n");
 
-    var token = getParameter(parameters, "id_token=");
-    var access = getParameter(parameters, "access_token=");
+    let token = parseParameter(parameters, "id_token=");
+    let access = parseParameter(parameters, "access_token=");
 
     console.log("token: " + token + "\n");
     console.log("access: " + access + "\n");
