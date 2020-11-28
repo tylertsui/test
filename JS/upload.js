@@ -137,12 +137,6 @@ let main = () => {
     let button = document.getElementById("submit");
     let return_button = document.getElementById("return");
 
-    const token = getToken();
-    console.log(token);
-    if (!checkURLForToken(token)) {
-        redirectToHome();
-    }
-
     button.innerHTML = "Submit";
     button.onclick = upload_function;
 
