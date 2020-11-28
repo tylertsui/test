@@ -314,7 +314,9 @@ const uploadEBookToDB = (body) => {
         url: `${BASE_URL}/prod/ebooks/add`,
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
+            "Access-Control-Allow-Origin" : "*", 
+            "Access-Control-Allow-Credentials" : true
         },
         data: body
     })
