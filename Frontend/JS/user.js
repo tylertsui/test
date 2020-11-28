@@ -170,8 +170,8 @@ const search_by_specific_user = (specific_user) => {
     })
     .then(response => {
         console.log("=====SUCCESSSS======")
-        console.log(JSON.stringify(response.data))
-        display_results(response.data.msg);
+        console.log(JSON.stringify(response.data[0]))
+        display_results(response.data[0]);
     }).catch(error => {
         console.log("==========FAILED================")
         console.log(error.response.data.msg)
