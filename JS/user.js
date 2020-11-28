@@ -325,7 +325,7 @@ const uploadEBookToDB = (body) => {
         window.alert(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(error.response.data)
+        console.log(error.response)
     })
 }
 
