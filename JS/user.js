@@ -303,7 +303,7 @@ let upload_function = async () => {
 }
 
 const uploadEBookToDB = (body) => {
-    let token = sessionStorage.getItem("token");
+    let token = access_token();
     // const header = {
     //     'Content-Type': 'application/json',
     //     'x-access-token': token
