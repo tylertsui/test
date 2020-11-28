@@ -322,11 +322,10 @@ const uploadEBookToDB = (body) => {
     .then(response => {
         console.log("=====SUCCESSSS======")
         console.log(JSON.stringify(response.data))
-        window.alert(response.data.msg);
-        navigate_user_page();
+        window.alert(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(error.response.data.msg)
+        console.log(error.response.data)
     })
 }
 
