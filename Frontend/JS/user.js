@@ -207,9 +207,9 @@ const token = getToken();
 
 const main = () => {
     console.log("TOKEN::::" + token);
-    if (!checkURLForToken(token)) {
-        redirectToHome();
-    }
+    // if (!checkURLForToken(token)) {
+    //     redirectToHome();
+    // }
     pageNavigation();
 }
 
