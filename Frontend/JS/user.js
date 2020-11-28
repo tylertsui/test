@@ -12,9 +12,9 @@ const navigate_ebook = () => {
 const access_token = () => {
     var current_url = window.location.href;
     current_url = current_url.toString;
-    console.log("CURRENT URL: " + current_url);
+    console.log("CURRENT URL: " + current_url + "\n");
     var index = current_url.indexOf("#");
-    console.log("INDEX: " + index);
+    console.log("INDEX: " + index + "\n");
 
     var parameters = current_url.substring(index + 1);
     console.log("url parameters: " + parameters);
@@ -207,9 +207,9 @@ const token = getToken();
 
 const main = () => {
     console.log("TOKEN::::" + token);
-    // if (!checkURLForToken(token)) {
-    //     redirectToHome();
-    // }
+    if (!checkURLForToken(token)) {
+        redirectToHome();
+    }
     pageNavigation();
 }
 
