@@ -7,13 +7,6 @@
 </head>
 <body>
     <button id="logout" onclick="signOut()">Sign out</button>
-    <div id="user_info">
-        <button id="user_info_settings">User Settings</button>
-    </div>
-
-    <div id="upload">
-        <button id="eb_upload">Upload Ebook</button>
-    </div>
 
     <div id="search">
         <label for="eb_search">Search eBooks:</label>
@@ -34,6 +27,20 @@
 
             <input type="radio" id="user" name="options" value="user">Specific User<br>
         </form>
+    </div>
+
+    <div id="upload_form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author"><br><br>
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre"><br><br>
+        <label for="year">Publication Year:</label>
+        <input type="text" id="year" name="year"><br><br>
+        <label for="eBook">eBook File:</label>
+        <input type="file" id="eBook" name="eBook"><br><br>
+        <button id="submit_book"></button>
     </div>
 
     <div id="search_results">
