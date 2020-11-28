@@ -11,6 +11,7 @@ const navigate_ebook = () => {
 }
 const access_token = () => {
     var current_url = window.location.href;
+    console.log("current url: " + current_url + "\n");
     current_url = current_url.toString;
     console.log("CURRENT URL: " + current_url + "\n");
     var index = current_url.indexOf("#");
