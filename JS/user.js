@@ -137,6 +137,10 @@ const search_by_year = (year) => {
 }
 
 const search_by_user = () => {
+    let parent = document.getElementById("search_results");
+    while(parent.firstChild) {
+        parent.firstChild.remove();
+    }
     let token = access_token();
     axios({
         method: 'GET',
