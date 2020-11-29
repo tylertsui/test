@@ -177,7 +177,10 @@ const search_by_specific_user = (specific_user) => {
 }
 
 const search_function = () => {
-    document.getElementById("search_results").innerHTML = "";
+    let parent = document.getElementById("search_results");
+    while(parent.firstChild) {
+        parent.firstChild.remove();
+    }
     let search = document.getElementById("eb_search").value;
     let search_choice = document.getElementById("search_o");
     let search_option;

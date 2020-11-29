@@ -29,6 +29,15 @@
             <input type="radio" id="userr" name="options" value="user">Specific User<br>
         </form>
     </div>
+    <div id="search_results">
+    </div>
+    <div id="search_output">
+        <p id="STitle"></p>
+        <p id="SAuthor"></p>
+        <p id="SGenre"></p>
+        <p id="SYear"></p>
+        <div id="SContent"></div>
+    </div>
     </div>
 
     <div id="upload_form" style="float: right;">
@@ -43,16 +52,6 @@
         <label for="eBook">eBook File:</label>
         <input type="file" id="eBook" name="eBook"><br><br>
         <button id="submit_book"></button>
-    </div>
-
-    <div id="search_results" style="float: left;">
-    </div>
-    <div id="search_output">
-        <p id="STitle"></p>
-        <p id="SAuthor"></p>
-        <p id="SGenre"></p>
-        <p id="SYear"></p>
-        <div id="SContent"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
