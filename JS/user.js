@@ -311,7 +311,7 @@ const uploadEBookToDB = (body) => {
     console.log(body);
     axios({
         method: 'POST',
-        url: `${BASE_URL}/prod/ebooks/add`,
+        url: "https://khfd4o04tl.execute-api.us-west-2.amazonaws.com/prod/ebooks/add",
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
