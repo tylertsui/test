@@ -45,11 +45,18 @@ const display_results = (data) => {
         let ebook =  data[i];
         button.innerHTML = ebook.title;
         button.onclick = () => {
-            document.getElementById("STitle").innerHTML = `Title: ${ebook.title}`;
-            document.getElementById("SAuthor").innerHTML = `Author: ${ebook.author}`;
-            document.getElementById("SGenre").innerHTML = `Genre: ${ebook.genre}`;
-            document.getElementById("SYear").innerHTML = `Publication Year: ${ebook.year}`;
-            document.getElementById("SContent").innerHTML = `Contents:\n${ebook.content}`;
+            // document.getElementById("STitle").innerHTML = `Title: ${ebook.title}`;
+            // document.getElementById("SAuthor").innerHTML = `Author: ${ebook.author}`;
+            // document.getElementById("SGenre").innerHTML = `Genre: ${ebook.genre}`;
+            // document.getElementById("SYear").innerHTML = `Publication Year: ${ebook.year}`;
+            // document.getElementById("SContent").innerHTML = `Contents:\n${ebook.content}`;
+            sessionStorage.setItem("title", ebook.title);
+            sessionStorage.setItem("author", ebook.author);
+            sessionStorage.setItem("year", ebook.year);
+            sessionStorage.setItem("content", ebook.content);
+            sessionStorage.setItem("genre", ebook.genre);
+            sessionStorage.setItem("bookID", ebook.id);
+            navigate_ebook();
         }
         new_div.appendChild(button);
         document.getElementById("search_results").appendChild(new_div);
