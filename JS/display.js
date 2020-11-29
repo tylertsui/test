@@ -1,9 +1,5 @@
 const navigate_user = () => {
-    window.location.replace("../../Userpage/HTML/index.html");
-}
-
-const navigate_edit = () => {
-    window.location.replace("../../EBookEdit/HTML/ebedit.html");
+    window.location.replace("./Userpage/HTML/index.html");
 }
 
 const delete_current = () => {
@@ -43,8 +39,6 @@ const page_populate = () => {
         genre: sessionStorage.getItem("genre")
     }
     let navigate_return = document.getElementById("nav_back");
-    let edit_ebook = document.getElementById("edit");
-    let delete_ebook = document.getElementById("delete_ebook");
 
     document.getElementById("title").innerHTML = `Title: ${ebook.title}`;
     document.getElementById("author").innerHTML = `Author: ${ebook.author}`;
@@ -55,11 +49,6 @@ const page_populate = () => {
     navigate_return.onclick = navigate_user;
     navigate_return.innerHTML = "Return";
 
-    delete_ebook.innerHTML = "Delete EBook";
-    delete_ebook.onclick = delete_current;
-
-    edit_ebook.onclick = navigate_edit;
-    edit_ebook.innerHTML = "Edit EBook";
 }
 
 const main = () => {
