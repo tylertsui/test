@@ -1,3 +1,7 @@
+const navigate_user = () => {
+    window.location.replace("./index.html");
+}
+
 const page_populate = () => {
     let ebook = {
         title: sessionStorage.getItem("title"),
