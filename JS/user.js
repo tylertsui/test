@@ -59,7 +59,7 @@ const display_results = (data) => {
 }
 
 const search_by_title = (title) => {
-    let token = sessionStorage.getItem("token");
+    let token = access_token();
     axios({
         method: 'GET',
         url: `${BASE_URL}/api/ebooks/title/${title}`,
@@ -79,10 +79,10 @@ const search_by_title = (title) => {
 }
 
 const search_by_genre = (genre) => {
-    let token = sessionStorage.getItem("token");
+    let token = access_token();
     axios({
         method: 'GET',
-        url: `${BASE_URL}/api/ebooks/genre/${genre}`,
+        url: `${BASE_URL}/prod/ebooks/genre/${genre}`,
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -99,10 +99,10 @@ const search_by_genre = (genre) => {
 }
 
 const search_by_author = (author) => {
-    let token = sessionStorage.getItem("token");
+    let token = access_token();
     axios({
         method: 'GET',
-        url: `${BASE_URL}/api/ebooks/author/${author}`,
+        url: `${BASE_URL}/prod/ebooks/author/${author}`,
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -119,10 +119,10 @@ const search_by_author = (author) => {
 }
 
 const search_by_year = (year) => {
-    let token = sessionStorage.getItem("token");
+    let token = access_token();
     axios({
         method: 'GET',
-        url: `${BASE_URL}/api/ebooks/year/${year}`,
+        url: `${BASE_URL}/prod/ebooks/year/${year}`,
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -159,10 +159,10 @@ const search_by_user = () => {
 }
 
 const search_by_specific_user = (specific_user) => {
-    let token = sessionStorage.getItem("token");
+    let token = access_token();
     axios({
         method: 'GET',
-        url: `${BASE_URL}/api/ebooks/uploader/${specific_user}`,
+        url: `${BASE_URL}/prod/ebooks/author/${specific_user}`,
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
