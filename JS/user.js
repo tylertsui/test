@@ -62,7 +62,7 @@ const search_by_title = (title) => {
     let token = access_token();
     axios({
         method: 'GET',
-        url: `${BASE_URL}/api/ebooks/title/${title}`,
+        url: `${BASE_URL}/prod/ebooks/genre/${title}`,
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -71,10 +71,10 @@ const search_by_title = (title) => {
     .then(response => {
         console.log("=====SUCCESSSS======")
         console.log(JSON.stringify(response.data))
-        display_results(response.data.msg);
+        display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(error.response.data.msg)
+        console.log(JSON.stringify(error.response))
     })
 }
 
@@ -91,10 +91,10 @@ const search_by_genre = (genre) => {
     .then(response => {
         console.log("=====SUCCESSSS======")
         console.log(JSON.stringify(response.data))
-        display_results(response.data.msg);
+        display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(error.response.data.msg)
+        console.log(JSON.stringify(error.response))
     })
 }
 
@@ -111,10 +111,10 @@ const search_by_author = (author) => {
     .then(response => {
         console.log("=====SUCCESSSS======")
         console.log(JSON.stringify(response.data))
-        display_results(response.data.msg);
+        display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(error.response.data.msg)
+        console.log(JSON.stringify(error.response))
     })
 }
 
@@ -131,10 +131,10 @@ const search_by_year = (year) => {
     .then(response => {
         console.log("=====SUCCESSSS======")
         console.log(JSON.stringify(response.data))
-        display_results(response.data.msg);
+        display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(error.response.data.msg)
+        console.log(JSON.stringify(error.response))
     })
 }
 
@@ -154,7 +154,7 @@ const search_by_user = () => {
         display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(error.response.data.msg)
+        console.log(JSON.stringify(error.response))
     })
 }
 
@@ -174,7 +174,7 @@ const search_by_specific_user = (specific_user) => {
         display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(error.response.data.msg)
+        console.log(JSON.stringify(error.response));
     })
 }
 
