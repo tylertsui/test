@@ -1,35 +1,3 @@
-const navigate_user = () => {
-    window.location.replace("./Userpage/HTML/index.html");
-}
-
-const delete_current = () => {
-    let token = sessionStorage.getItem("token");
-    let body = {
-        author: sessionStorage.getItem("author"),
-        title: sessionStorage.getItem("title")
-    }
-    axios({
-        method: 'DELETE',
-        url: `${BASE_URL}/api/delete/ebook`,
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        },
-        data: body
-    })
-    // axios.post("http://localhost:8080/api/eBookAdd", body, header)
-    .then(response => {
-        console.log("=====SUCCESSSS======")
-        console.log(JSON.stringify(response.data))
-        window.alert(response.data.msg);
-        navigate_user();
-    }).catch(error => {
-        console.log("==========FAILED================")
-        console.log(error.response.data.msg)
-        window.alert(error.response.data.msg);
-    })
-}
-
 const page_populate = () => {
     let ebook = {
         title: sessionStorage.getItem("title"),
@@ -52,8 +20,8 @@ const page_populate = () => {
 }
 
 const main = () => {
-    let user = getUser();
-    if (checkUserForNull(user)) {
+    const token = getToken();
+    if (!checkURLForToken(token)) {
         redirectToHome();
     }
     page_populate();
