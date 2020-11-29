@@ -62,7 +62,7 @@ const search_by_title = (title) => {
     let token = access_token();
     axios({
         method: 'GET',
-        url: `${BASE_URL}/prod/ebooks/genre/${title}`,
+        url: `${BASE_URL}/prod/ebooks/title/${title}`,
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -74,7 +74,7 @@ const search_by_title = (title) => {
         display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(JSON.stringify(error.response))
+        console.log(error.response.data.message)
     })
 }
 
@@ -94,7 +94,7 @@ const search_by_genre = (genre) => {
         display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(JSON.stringify(error.response))
+        console.log(error.response.data.message)
     })
 }
 
@@ -114,7 +114,7 @@ const search_by_author = (author) => {
         display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(JSON.stringify(error.response))
+        console.log(error.response.data.message)
     })
 }
 
@@ -134,7 +134,7 @@ const search_by_year = (year) => {
         display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(JSON.stringify(error.response))
+        console.log(error.response.data.message)
     })
 }
 
@@ -154,7 +154,7 @@ const search_by_user = () => {
         display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(JSON.stringify(error.response))
+        console.log(error.response.data.message)
     })
 }
 
@@ -174,7 +174,7 @@ const search_by_specific_user = (specific_user) => {
         display_results(response.data);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(JSON.stringify(error.response));
+        console.log(error.response.data.message);
     })
 }
 
@@ -322,10 +322,10 @@ const uploadEBookToDB = (body) => {
     .then(response => {
         console.log("=====SUCCESSSS======")
         console.log(JSON.stringify(response.data))
-        window.alert(response.data);
+        window.alert(response.data.message);
     }).catch(error => {
         console.log("==========FAILED================")
-        console.log(error.response)
+        console.log(error.response.data.message)
     })
 }
 
