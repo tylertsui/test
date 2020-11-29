@@ -20,10 +20,6 @@ const page_populate = () => {
 }
 
 const main = () => {
-    const token = getToken();
-    if (!checkURLForToken(token)) {
-        redirectToHome();
-    }
     page_populate();
 }
 
