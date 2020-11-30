@@ -11,12 +11,14 @@ const page_populate = () => {
         genre: sessionStorage.getItem("genre")
     }
     let navigate_return = document.getElementById("nav_back");
+    let paragraph = document.createElement("p");
+    paragraph.innerHTML = ebook.content;
 
     document.getElementById("title").innerHTML = `Title: ${ebook.title}`;
     document.getElementById("author").innerHTML = `Author: ${ebook.author}`;
     document.getElementById("genre").innerHTML = `Genre: ${ebook.genre}`;
     document.getElementById("year").innerHTML = `Published on: ${ebook.year}`;
-    document.getElementById("ebook_contents").innerHTML = ebook.content;
+    document.getElementById("ebook_contents").appendChild(paragraph);
 
     navigate_return.onclick = navigate_user;
     navigate_return.innerHTML = "Return";

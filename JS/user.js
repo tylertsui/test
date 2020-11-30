@@ -335,7 +335,7 @@ const uploadEBookToDB = (body) => {
     .then(response => {
         console.log("=====SUCCESSSS======")
         console.log(JSON.stringify(response.data))
-        window.alert(response.data.message);
+        window.alert("EBook Successfully Uploaded!");
     }).catch(error => {
         console.log("==========FAILED================")
         console.log(error.response.data.message)
