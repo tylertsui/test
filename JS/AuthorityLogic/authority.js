@@ -19,5 +19,5 @@ const checkURLForToken = (url) => {
 }
 
 const redirectToHome = () => {
-    window.location.replace("https://ebooks-example.auth.us-west-2.amazoncognito.com/signup?client_id=1pcuginu18b171s6j4u7r0l4s1&response_type=token&scope=email+openid&redirect_uri=https://master.d2iiabk636d3yd.amplifyapp.com/");
+    window.location.replace("https://ebookservice.auth.us-west-2.amazoncognito.com/login?client_id=2vn2grt0lci17j433i621sq9e5&response_type=token&scope=email+openid&redirect_uri=https://master.d2iiabk636d3yd.amplifyapp.com/");
 }
