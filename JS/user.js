@@ -27,7 +27,8 @@ const parseParameter = (url, param) => {
 
 const access_token = () => {
     let current_url = window.location.href;
-    sessionStorage.setItem("coginito_url", current_url);
+    sessionStorage.setItem("coginito_url", current_url.toString());
+    console.log(current_url.toString());
     current_url = current_url.toString();
     let index = current_url.indexOf("#");
 
