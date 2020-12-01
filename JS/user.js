@@ -37,6 +37,9 @@ const access_token = () => {
     let token = parseParameter(parameters, "id_token=");
     let access = parseParameter(parameters, "access_token=");
 
+    console.log(`TOKEN +++++++ ${token}`);
+    console.log(`ACESS ========= ${access}`);
+
     return token;
 }
 
