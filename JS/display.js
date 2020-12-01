@@ -1,4 +1,5 @@
 const navigate_user = () => {
+    console.log(sessionStorage.getItem("cognito_url"));
     window.location.replace(sessionStorage.getItem("cognito_url"));
 }
 
