@@ -1,5 +1,5 @@
 const navigate_user = () => {
-    window.location.replace("./index.html");
+    window.location.replace(sessionStorage.getItem("cognito_url"));
 }
 
 const page_populate = () => {
