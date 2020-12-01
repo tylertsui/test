@@ -27,7 +27,7 @@ const parseParameter = (url, param) => {
 
 const access_token = () => {
     let current_url = window.location.href;
-    sessionStorage.setItem("coginito_url", current_url.toString());
+    sessionStorage.setItem("cognito_url", current_url.toString());
     console.log(current_url.toString());
     current_url = current_url.toString();
     let index = current_url.indexOf("#");
@@ -40,9 +40,7 @@ const access_token = () => {
     console.log(`TOKEN +++++++ ${token}`);
     console.log(`ACESS ========= ${access}`);
 
-    sessionStorage.setItem("token", token);
-
-    // return token;
+    return token;
 }
 
 const display_results = (data) => {
@@ -155,13 +153,13 @@ const search_by_user = () => {
     while(parent.firstChild) {
         parent.firstChild.remove();
     }
-    access_token();
+    let token = access_token();
     axios({
         method: 'GET',
         url: `${BASE_URL}/prod/ebooks`,
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${sessionStorage.getItem("token")}`
+            'Authorization': `Bearer ${token}`
         },
     })
     .then(response => {
