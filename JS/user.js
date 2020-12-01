@@ -40,7 +40,9 @@ const access_token = () => {
     console.log(`TOKEN +++++++ ${token}`);
     console.log(`ACESS ========= ${access}`);
 
-    return token;
+    sessionStorage.setItem("token", token);
+
+    // return token;
 }
 
 const display_results = (data) => {
@@ -153,13 +155,13 @@ const search_by_user = () => {
     while(parent.firstChild) {
         parent.firstChild.remove();
     }
-    let token = access_token();
+    access_token();
     axios({
         method: 'GET',
         url: `${BASE_URL}/prod/ebooks`,
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${sessionStorage.getItem("token")}`
         },
     })
     .then(response => {

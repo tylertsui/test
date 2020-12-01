@@ -1,7 +1,7 @@
 const navigate_user = () => {
-    // console.log(sessionStorage.getItem("cognito_url"));
-    // window.location.replace(sessionStorage.getItem("cognito_url"));
-    history.back();
+    console.log(sessionStorage.getItem("cognito_url"));
+    window.location.replace(sessionStorage.getItem("cognito_url"));
+    // history.back();
 }
 
 const page_populate = () => {
