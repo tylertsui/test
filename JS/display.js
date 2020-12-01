@@ -29,6 +29,8 @@ const page_populate = () => {
 
 const main = () => {
     page_populate();
+    console.log(sessionStorage.getItem("cognito_url"));
+
 }
 
 main();
